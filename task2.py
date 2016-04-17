@@ -11,11 +11,13 @@ if __name__ == "__main__":
     b=0.2
     y0=[0.1,1.0]
     t = np.linspace(0,5,101)
+    #Call odeint to generate the solution. 
     sol = odeint(pend,y0,t,args=(a,b))
     print('      y0     |     y1     ')
     print('==========================')
     print(sol)
     
+    #to plot both components
     plt.plot(t,sol[:,0],'b',label='y0(t)')
     plt.plot(t,sol[:,1],'r',label='y1(t)')
     plt.legend(loc='best')

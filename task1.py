@@ -8,10 +8,13 @@ def gausslegendre(f, a, b, n=20):
     ans = 0
     x,w = np.polynomial.legendre.leggauss(n);    
     i=0
+    #case 1
     if(a==-1 & b==1):
         while(i<n):
             ans = ans + w[i]*f(x[i])
             i=i+1
+            
+    #case 2
     else:
         while(i<n):
             #(a+b)/2)+(((b-a)/2) is used to transform a and b to a=-1 and b=1
